@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Arulmozhi! 💖</title>
+    <meta name="description" content="A special birthday surprise for Arulmozhi S from Sudhesi M.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --blush-pink: #FADADD;
+            --rose-gold: #B76E79;
+            --cream: #FFF5EE;
+            --gold: #D4AF37;
+            --deep-burgundy: #800020;
+            --white: #FFFFFF;
+            --shadow: rgba(183, 110, 121, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--cream);
+            color: var(--deep-burgundy);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .btn-primary {
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: var(--rose-gold);
+            color: var(--white);
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px var(--shadow);
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--deep-burgundy);
+        }
+
+        /* --- Transitions --- */
+        #main-experience {
+            display: none;
+            opacity: 0;
+        }
+
+        /* --- Page 1: Secret Code Entrance --- */
+        #entrance-screen {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--blush-pink), var(--rose-gold));
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .entrance-content {
+            background: rgba(255, 245, 238, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 450px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .lock-icon {
+            font-size: 80px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            cursor: pointer;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .entrance-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--white);
+            text-shadow: 2px 2px 4px var(--shadow);
+        }
+
+        .entrance-content p {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-size: 1.2rem;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input[type="password"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .unlock-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 50px;
+            border: none;
+            background: var(--deep-burgundy);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .unlock-btn:hover {
+            background: #a00028;
+            transform: translateY(-3px);
+        }
+
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* --- Cursor Trail --- */
+        .cursor-heart {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            color: var(--rose-gold);
+            pointer-events: none;
+            z-index: 3000;
+            animation: heartFadeOut 1s forwards;
+        }
+
+        @keyframes heartFadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.5);
+            }
+        }
+
+        /* --- Parallax --- */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--white) 0%, var(--blush-pink) 100%);
+            z-index: -1;
+        }
+
+        #hero h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--deep-burgundy);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--rose-gold);
+        }
+
+        /* --- Section 2: Cake --- */
+        #cake-section {
+            background: var(--white);
+        }
+
+        .cake-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .cake-img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .candles {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .flame {
+            width: 12px;
+            height: 20px;
+            background: #ffcc00;
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            top: -20px;
+            left: -1px;
+            animation: flicker 0.1s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        /* --- Section 3: Love Counter --- */
+        #love-counter-section {
+            background: var(--blush-pink);
+            color: var(--deep-burgundy);
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .counter-item {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .counter-item span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* --- Section 4: Letter --- */
+        #letter-section {
+            background: url('https://images.unsplash.com/photo-1586075010620-2255be9edec3?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #333;
+        }
+
+        .letter-paper {
+            background: #fff9f0;
+            padding: 60px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            position: relative;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .letter-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent 95%, rgba(0, 0, 0, 0.05) 5%);
+            background-size: 100% 2em;
+            pointer-events: none;
+        }
+
+        #typewriter {
+            min-height: 300px;
+        }
+
+        /* --- Section 5: Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 10px 25px var(--shadow);
+            transition: transform 0.3s;
+            transform: rotate(-2deg);
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg);
+            z-index: 5;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .polaroid .caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        /* --- Video Gallery --- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        .video-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Section 6: Timeline --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--rose-gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '❤';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -15px;
+            background-color: var(--white);
+            border: 4px solid var(--rose-gold);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--rose-gold);
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .right::after {
+            left: -15px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        /* --- Section 7: Reasons --- */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .card-front {
+            background: var(--white);
+            color: var(--deep-burgundy);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+        }
+
+        .card-back {
+            background: var(--rose-gold);
+            color: var(--white);
+            transform: rotateY(180deg);
+            font-size: 1.1rem;
+        }
+
+        /* --- Section 9: Gift Box --- */
+        .gift-box-container {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .gift-box {
+            font-size: 10rem;
+            color: var(--gold);
+            animation: wobble 2s infinite;
+        }
+
+        @keyframes wobble {
+
+            0%,
+            100% {
+                transform: rotate(0);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* --- Falling Petals --- */
+        #petals-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2000;
+            /* Above everything */
+        }
+
+        /* --- Sparkles --- */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: twinkle var(--duration) infinite;
+            opacity: 0;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.2);
+            }
+        }
+
+        /* --- Music Toggle --- */
+        #music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px var(--shadow);
+            color: var(--rose-gold);
+            font-size: 1.5rem;
+            border: 2px solid var(--blush-pink);
+        }
+
+
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+
+            .timeline-item::after {
+                left: 16px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .letter-paper {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Falling Petals Canvas -->
+    <canvas id="petals-canvas"></canvas>
+
+
+
+    <!-- Background Music (Audio Element) -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Page 1: Secret Code Entrance -->
+    <div id="entrance-screen">
+        <div class="entrance-content">
+            <div class="lock-icon" id="padlock">
+                <i class="ph-fill ph-heart"></i>
+            </div>
+            <h1>Enter Our Secret Code</h1>
+            <p>Only you know the magic word to unlock your surprise...</p>
+
+            <div class="input-group">
+                <input type="password" id="secret-code-input" placeholder="••••••••">
+                <div class="error-msg" id="error-msg">Oops! That's not it, my love 💔 Try again...</div>
+            </div>
+
+            <button class="unlock-btn" onclick="checkCode()">Unlock My Heart 💖</button>
+            <button class="hint-btn" id="hint-trigger" onclick="showHint()">Need a hint? 💌</button>
+            <div id="hint-text" style="display: none; color: white; margin-top: 10px; font-style: italic;">
+                "The date we first kissed 💋"
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Toggle -->
+    <div id="music-toggle" onclick="toggleMusic()">
+        <i class="ph-fill ph-speaker-slash" id="music-icon"></i>
+    </div>
+
+
+
+    <!-- Page 2: Main Experience -->
+    <main id="main-experience">
+
+        <!-- Section 1: Hero -->
+        <section id="hero">
+            <div class="parallax-bg"></div>
+            <div class="container">
+                <h1 class="animate-text">Happy Birthday, Kuttyma! 💕</h1>
+                <p class="animate-text">The day the world got a little more beautiful…</p>
+                <div style="margin-top: 30px; font-size: 2rem; color: var(--gold);">✨ 20-05-2026 ✨</div>
+            </div>
+        </section>
+
+        <!-- Section 2: Cake -->
+        <section id="cake-section">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 30px;">Make a Wish, My Love 🎂</h2>
+                <div class="cake-container">
+                    <div class="candles" id="candles">
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=300&q=80"
+                        alt="Birthday Cake" class="cake-img" id="cake-img">
+                </div>
+                <button class="btn-primary" id="wish-btn" onclick="blowCandles()">Make a Wish 🎂</button>
+                <p id="wish-message"
+                    style="display: none; margin-top: 20px; font-size: 1.5rem; color: var(--rose-gold); font-family: 'Dancing Script', cursive;">
+                    Wish Granted ✨ I hope all your dreams come true!</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Love Counter -->
+        <section id="love-counter-section">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 30px;">Our Love Journey</h2>
+                <p>We've been in love for:</p>
+                <div class="counter-grid" id="counter">
+                    <div class="counter-item"><span id="years">0</span> Years</div>
+                    <div class="counter-item"><span id="months">0</span> Months</div>
+                    <div class="counter-item"><span id="days">0</span> Days</div>
+                    <div class="counter-item"><span id="hours">0</span> Hours</div>
+                    <div class="counter-item"><span id="minutes">0</span> Mins</div>
+                    <div class="counter-item"><span id="seconds">0</span> Secs</div>
+                </div>
+                <p style="margin-top: 30px;">...and counting every single heartbeat ❤</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Letter -->
+        <section id="letter-section">
+            <div class="container" style="display: flex; justify-content: center;">
+                <div class="letter-paper">
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">A Letter From My Heart</h2>
+                    <div id="typewriter"></div>
+                    <p
+                        style="text-align: right; margin-top: 30px; font-family: 'Great Vibes', cursive; font-size: 2rem;">
+                        Forever Yours, <br>Sudhesi M ❤️</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Gallery -->
+        <section id="gallery">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 50px;">Our Beautiful Memories</h2>
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Images will be loaded dynamically by gallery.js -->
+                    <div style="grid-column: 1/-1; padding: 50px;">
+                        <p>Loading our 300+ memories... 💖</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Gallery Script -->
+        <script src="assets/js/gallery.js"></script>
+
+        <!-- Section: Love Moments (Videos) -->
+        <section id="love-moments-videos" style="background: var(--white);">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 50px;">Love Moments 🎥</h2>
+                <div class="video-grid" id="video-grid">
+                    <!-- Videos will be loaded dynamically by videos.js -->
+                    <div style="grid-column: 1/-1; padding: 50px;">
+                        <p>Loading our love moments... 🎥</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-style: italic; color: var(--rose-gold);">And many more small moments
+                    that mean the world to me...</p>
+            </div>
+        </section>
+
+        <!-- Dynamic Video Script -->
+        <script src="assets/js/videos.js"></script>
+
+        <!-- Section 6: Timeline -->
+        <section id="timeline-section">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 50px;">Our Love Story</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Sept 23, 2023</h3>
+                            <p>The first call and message that started it all... 📞💬</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Sept 24, 2023</h3>
+                            <p>The day I proposed and you made me the happiest person. 💍💖</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Oct 25, 2023</h3>
+                            <p>Our magical first meet, first kiss, and first hug. A day etched in my heart forever. 💋🫂
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Jan 12, 2024</h3>
+                            <p>Our first celebration together—a beautiful Pongal. 🌾🔥</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>March 28, 2024</h3>
+                            <p>Our first movie date watching "The Goat Life". 🎬🍿</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>May 2, 2024</h3>
+                            <p>Our first long-distance travel adventure. ✈️🌍</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>May 3, 2024</h3>
+                            <p>Captured our very first selfie together. 🤳📸</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>April 10, 2025</h3>
+                            <p>The day you officially accepted my love. My heart is finally home. ❤️🏡</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Reasons -->
+        <section id="reasons">
+            <div class="container">
+                <h2 style="font-size: 3rem;">15 Reasons Why I Love You</h2>
+                <p>Click the cards to reveal my heart's secrets...</p>
+                <div class="reasons-grid">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#1</div>
+                            <div class="card-back">அவள் கண்கள் — இரவு நிலவையும் மயக்கும் அமைதி. ✨ 👀💖</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#2</div>
+                            <div class="card-back">அவள் சிரிப்பு — இதய காயத்தையும் மறக்க வைக்கும் மருந்து. 💖 😊✨</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#3</div>
+                            <div class="card-back">அவள் மூக்கு — சின்ன கோபத்திலும் கூட அழகை கூட்டும் ஓவியம். 🌸 👃💫
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#4</div>
+                            <div class="card-back">அவள் காதுகள் — ஜிமிக்கி ஆடும் ஒவ்வொரு நொடியும் இசை. 💫 👂🎵</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#5</div>
+                            <div class="card-back">அவள் உதடுகள் — பேசாமல் இருந்தாலும் காதல் சொல்லும் கவிதை. 🌹 💋📜
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#6</div>
+                            <div class="card-back">அவள் தலைமுடி — காற்றோடு சேர்ந்து என் மனசையும் சிதறடிக்கிறது. 🍃
+                                💇‍♀️🌪️</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#7</div>
+                            <div class="card-back">அவள் குரல் — ஒரு முறை கேட்டால் நாள் முழுக்க மனதில் ஒலிக்கும் பாடல்.
+                                🎶 🗣️🎧</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#8</div>
+                            <div class="card-back">அவள் இதயம் — அன்பை மட்டும் நிரப்பி வைத்திருக்கும் அழகான உலகம். 💞
+                                💝🌍</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#9</div>
+                            <div class="card-back">சொல்லாமல் சொல்லும் உன் மௌனம் கூட, என்னை கொள்ளாமல் கொள்ளுதடி...! 🤐💘
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#10</div>
+                            <div class="card-back">எங்கே முடியும் என தெரியாமலே தொடரும் இந்த வாழ்க்கை பாதையில் சேர்ந்து
+                                நடக்க நீ இருந்தால் சோர்ந்து போகும் வரை பயணிக்கலாம் 🚶‍♂️🚶‍♀️🌈</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#11</div>
+                            <div class="card-back">வெறும் உடல்களின் தேடல் என்று ஒதுக்கி வைத்திருந்தேன் ... அவளின்
+                                தீண்டலில் தான் உணர்ந்தேன், காமம் என்பது காதலின் உன்னத மொழி என்று! 🔥💑</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#12</div>
+                            <div class="card-back">மந்திரங்கள் ஓதி, முடிச்சுகள் இடவில்லை, மாங்கல்யம் எனும் பொன்னும்
+                                சூட்டவில்லை, மஞ்சள் கயிறும் கழுத்தில் சூடவில்லை, ஆனாலும் நாங்கள் இருவரும் கணவன் மனைவி
+                                தான்... 👰🤵🕊️</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#13</div>
+                            <div class="card-back">சண்டை போட்டாலும் விலக முடியாது, கோபம் வந்தாலும் மறக்க முடியாது,
+                                ஏனெனில் உன்னோடு சண்டை போடுவதும் காதல்தான். 👊❤️</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#14</div>
+                            <div class="card-back">கண் முன்னே ரசிக்க ஆயிரம் இருந்தும் ரசிப்பதற்கு என் விழிகள் அவளை தானே
+                                தேடுகிறது.. 👀🔍💖</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">#15</div>
+                            <div class="card-back">வார்த்தைகளை வாசிக்க தெரியாதவர்கள் கூட பார்த்ததும் ரசித்து செல்லும்
+                                அழகிய கவிதை அவள் 📖✨😍</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Favorites -->
+        <section id="favorites-section"
+            style="background: linear-gradient(to bottom, var(--cream), var(--blush-pink));">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 50px;">Everything About My Kuttyma 👑</h2>
+                <div class="favorites-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-music-notes"></i>
+                            Favorite Song</h3>
+                        <p style="font-size: 1.2rem;">Neeyum Naanum Anbe 🎵</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-palette"></i>
+                            Favorite Color</h3>
+                        <p style="font-size: 1.2rem;">Blue 💙</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-cooking-pot"></i>
+                            Favorite Food</h3>
+                        <p style="font-size: 1.2rem;">Dhosa 🥘</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-user-star"></i>
+                            Favorite Hero</h3>
+                        <p style="font-size: 1.2rem;">Sudhesi 🦸‍♂️ (That's me!)</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-star"></i>
+                            Favorite Heroine</h3>
+                        <p style="font-size: 1.2rem;">Jothika 🌟</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-book-open"></i>
+                            Favorite Subject</h3>
+                        <p style="font-size: 1.2rem;">History 📖</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-bicycle"></i>
+                            Favorite Bike</h3>
+                        <p style="font-size: 1.2rem;">Duke 🏍️</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-trophy"></i>
+                            Favorite Game</h3>
+                        <p style="font-size: 1.2rem;">Kho-kho 🏃‍♀️</p>
+                    </div>
+                    <div class="fav-card"
+                        style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow);">
+                        <h3 style="color: var(--rose-gold); margin-bottom: 15px;"><i class="ph-fill ph-flower"></i>
+                            Favorite Flower</h3>
+                        <p style="font-size: 1.2rem;">Malli 🌸</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Song -->
+        <section id="song-section">
+            <div class="container">
+                <h2 style="font-size: 3rem;">Our Song</h2>
+                <p style="margin-bottom: 30px;">"Neeyum Naanum Anbe" - Imaikkaa Nodigal</p>
+                <div
+                    style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px var(--shadow); display: inline-block;">
+                    <i class="ph-fill ph-music-notes"
+                        style="font-size: 5rem; color: var(--rose-gold); animation: pulse 2s infinite;"></i>
+                    <p style="margin-top: 10px;">This song will always remind me of us...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Gift Box -->
+        <section id="gift-section">
+            <div class="container">
+                <h2 style="font-size: 3rem;">A Virtual Gift For You</h2>
+                <p>Shake the box to open it!</p>
+                <div class="gift-box-container" onclick="openGift()">
+                    <i class="ph-fill ph-gift gift-box" id="gift-icon"></i>
+                </div>
+                <div id="gift-message"
+                    style="display: none; font-size: 1.8rem; font-family: 'Great Vibes', cursive; color: var(--deep-burgundy);">
+                    "You are the greatest gift life has ever given me. I promise to cherish you forever. 💍"
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Closing -->
+        <section id="closing" style="background: linear-gradient(to top, var(--blush-pink), var(--cream));">
+            <div class="container">
+                <h1 style="font-size: 4rem; margin-bottom: 30px;">I Love You More Than Words Can Say, Kuttyma 💖</h1>
+                <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto;">May this birthday be as beautiful and
+                    special as you are. I'm so lucky to have you in my life.</p>
+                <div style="margin-top: 50px; font-family: 'Great Vibes', cursive; font-size: 3rem;">
+                    Forever Yours, <br> Sudhesi M ❤️
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Configuration ---
+        const SECRET_CODE = "SUDHESIARUL1820";
+        const HER_NAME = "ARULMOZHI S";
+        const MY_NAME = "SUDHESI M";
+        const ANNIVERSARY_DATE = new Date("Sep 24 2023 00:00:00");
+        const bgMusic = document.getElementById('bg-music');
+
+        let attempts = 0;
+        let isMusicPlaying = false;
+
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                icon.classList.replace('ph-speaker-high', 'ph-speaker-slash');
+            } else {
+                bgMusic.play().catch(e => console.log("Audio play failed:", e));
+                icon.classList.replace('ph-speaker-slash', 'ph-speaker-high');
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        // --- Entrance Logic ---
+        function checkCode() {
+            const input = document.getElementById('secret-code-input').value;
+            const error = document.getElementById('error-msg');
+            const padlock = document.getElementById('padlock');
+
+            if (input === SECRET_CODE) {
+                unlock();
+            } else {
+                attempts++;
+                error.style.display = 'block';
+                padlock.style.animation = 'none';
+                padlock.offsetHeight;
+                padlock.style.animation = 'shake 0.5s';
+
+                if (attempts >= 3) {
+                    showHint();
+                }
+            }
+        }
+
+        function showHint() {
+            document.getElementById('hint-text').style.display = 'block';
+        }
+
+        function unlock() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FADADD', '#B76E79', '#D4AF37']
+            });
+
+            const entrance = document.getElementById('entrance-screen');
+            const main = document.getElementById('main-experience');
+
+            gsap.to(entrance, {
+                duration: 1.5,
+                y: '-100%',
+                ease: 'power4.inOut',
+                onComplete: () => {
+                    entrance.style.display = 'none';
+                    main.style.display = 'block';
+                    gsap.to(main, { opacity: 1, duration: 1 });
+                    startExperience();
+                    if (!isMusicPlaying) toggleMusic();
+                }
+            });
+        }
+
+        // --- Main Experience Logic ---
+        function startExperience() {
+            updateLoveCounter();
+            setInterval(updateLoveCounter, 1000);
+            startTypewriter();
+            initScrollAnimations();
+            if (typeof initGallery === 'function') initGallery();
+            if (typeof initVideos === 'function') initVideos();
+        }
+
+        // Love Counter
+        function updateLoveCounter() {
+            const now = new Date();
+            const diff = now - ANNIVERSARY_DATE;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('years').innerText = years;
+            document.getElementById('months').innerText = months;
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+
+        // Typewriter Effect
+        function startTypewriter() {
+            const text = `My Dearest Arulmozhi,\n\nFrom the moment you entered my life, everything changed. You are the reason I smile a little brighter and dream a little bigger. Every second spent with you is a treasure I hold close to my heart. On your special day, I want you to know how much you mean to me. You are my best friend, my love, and my everything. I promise to be by your side, through every joy and every challenge, forever.\n\nHappy Birthday, my beautiful soul.`;
+            const container = document.getElementById('typewriter');
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    container.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
+                    i++;
+                    setTimeout(type, 30);
+                }
+            }
+            type();
+        }
+
+        // Cake Interaction
+        function blowCandles() {
+            const flames = document.querySelectorAll('.flame');
+            flames.forEach(f => f.style.display = 'none');
+
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.8 }
+            });
+
+            document.getElementById('wish-btn').style.display = 'none';
+            document.getElementById('wish-message').style.display = 'block';
+        }
+
+        // Gift Box Interaction
+        function openGift() {
+            const icon = document.getElementById('gift-icon');
+            const msg = document.getElementById('gift-message');
+
+            icon.classList.replace('ph-gift', 'ph-heart-straight');
+            icon.style.color = 'var(--rose-gold)';
+            icon.style.animation = 'none';
+
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.8 }
+            });
+
+            msg.style.display = 'block';
+            gsap.from(msg, { opacity: 0, y: 20, duration: 1 });
+        }
+
+        // Scroll Animations & Parallax
+        function initScrollAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Parallax Hero
+            gsap.to(".parallax-bg", {
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 100
+            });
+
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.from(section.querySelectorAll('.container > *'), {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    stagger: 0.2
+                });
+            });
+        }
+
+        // --- Cursor Heart Trail ---
+        window.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.1) return; // Limit number of hearts
+            const heart = document.createElement('i');
+            heart.className = 'ph-fill ph-heart cursor-heart';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
+
+        // --- Falling Petals Canvas ---
+        const canvas = document.getElementById('petals-canvas');
+        const ctx = canvas.getContext('2d');
+        let petals = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Petal {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.r = Math.random() * 5 + 2;
+                this.s = Math.random() * 2 + 1;
+                this.a = Math.random() * Math.PI;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(250, 218, 221, 0.6)';
+                ctx.fill();
+            }
+            update() {
+                this.y += this.s;
+                this.x += Math.sin(this.a) * 0.5;
+                this.a += 0.01;
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+        }
+
+        for (let i = 0; i < 50; i++) petals.push(new Petal());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petals.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // --- Sparkles & Hearts Creator ---
+        function initDecorations() {
+            const container = document.getElementById('entrance-screen');
+
+            // Sparkles
+            for (let i = 0; i < 50; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                sparkle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(sparkle);
+            }
+
+            // Floating Hearts
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('i');
+                heart.className = 'ph-fill ph-heart floating-heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        window.onload = () => {
+            initDecorations();
+        };
+
+        // --- Easter Egg ---
+        let typed = "";
+        window.addEventListener('keydown', (e) => {
+            typed += e.key.toLowerCase();
+            if (typed.includes("iloveyou")) {
+                confetti({
+                    particleCount: 500,
+                    spread: 160,
+                    origin: { y: 0.5 },
+                    colors: ['#ff0000', '#ff69b4', '#ff1493']
+                });
+                typed = "";
+            }
+            if (typed.length > 20) typed = typed.substring(1);
+        });
+
+    </script>
+</body>
+
+</html>
